@@ -1,3 +1,78 @@
 .projets {
     text-align: center;
 }
+
+/* styles.css */
+
+.container {
+    width: 300px;
+    /* Largeur bien définie */
+    height: 300px;
+    /* Hauteur bien définie */
+    position: relative;
+    overflow: hidden;
+    background-color: #d2b48c;
+    /* Fond noir */
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: -100px;
+        /* Position initiale en haut */
+        left: 50%;
+        /* Position horizontale centrée */
+        transform: translateX(-50%);
+    }
+
+    100% {
+        top: 400px;
+        /* Position finale en bas */
+        left: 50%;
+        /* Position horizontale centrée */
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes initialPosition {
+    to {
+        left: calc(100% - 50px);
+        /* Position horizontale aléatoire à droite */
+    }
+}
+
+.drop.explode1 {
+    animation: explodeAnimation1 1s linear;
+}
+
+@keyframes explodeAnimation1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(100px, 100px);
+        /* Position finale */
+        opacity: 0;
+    }
+}
+
+
+.drop {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #3498db;
+    /* Couleur principale de la goutte */
+    border-radius: 50%;
+    background: linear-gradient(white, #3498db);
+    /* Dégradé pour une apparence réaliste */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre pour un effet de profondeur */
+    position: absolute;
+    animation: moveUpDown 5s linear infinite, initialPosition 0s forwards;
+    /* Ajoutez une animation initiale */
+    left: 0;
+    /* Définissez la position horizontale à 0 (à gauche) */
+
+}

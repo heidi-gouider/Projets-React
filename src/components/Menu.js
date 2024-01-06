@@ -10,3 +10,10 @@ export default function Menu() {
         </div>
     )
 }
+
+// tester le select pour l'onglet projets au survol ou click
+// <select name="projet" id="projet">
+// <option value="e-commerce"></option>
+// <option value="vitrine"></option>
+// <option value="exploration"></option>
+// </select>

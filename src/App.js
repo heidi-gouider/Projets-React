@@ -4,7 +4,7 @@ import Menu from './components/Menu';
 import Projets from './pages/Projets';
 import './css/app.css';
 import './App.css';
-
+import './js/app.js';
 
 function App() {
   return (
