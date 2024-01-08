@@ -60,12 +60,12 @@
 .drop {
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: 11px solid transparent;
+    border-right: 3px solid transparent;
     border-bottom: 20px solid #3498db;
     /* Couleur principale de la goutte */
     border-radius: 50%;
-    background: linear-gradient(white, #3498db);
+    background: linear-gradient(white, #95c7e9);
     /* Dégradé pour une apparence réaliste */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Ombre pour un effet de profondeur */

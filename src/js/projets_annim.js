@@ -29,6 +29,35 @@
     //   genererGoutte();
     // }
   // }, []); 
-  // Assure-toi que cette fonction useEffect ne s'exécute qu'une fois
+  // verifier que cette fonction useEffect ne s'exécute qu'une fois
 
 // }
+
+import React, { useState, useEffect } from 'react';
+
+const RainDrops = () => {
+  const [drops, setDrops] = useState([]);
+
+  useEffect(() => {
+    // Ajouter une nouvelle goutte à intervalles réguliers
+    const interval = setInterval(() => {
+      const newDrops = [...drops];
+      newDrops.push({ id: Date.now(), top: 0 }); // Choisir une position de départ
+
+      setDrops(newDrops);
+    }, 1000); // Intervalle en millisecondes
+
+    return () => clearInterval(interval);
+  }, [drops]);
+
+  return (
+    <div className="rain-container">
+      {drops.map((drop) => (
+        <div key={drop.id} className="rain-drop" style={{ top: `${drop.top}px` }} />
+      ))}
+    </div>
+  );
+};
+
+export default RainDrops;
+
